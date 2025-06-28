@@ -7,11 +7,10 @@ router = APIRouter(prefix="/api")
 
 class TranscriptionRequest(BaseModel):
     audio_url: str
-    duration: float
 
 @router.post("/conversation", response_model=Conversation)
 async def get_conversation(request: TranscriptionRequest):
     try:
-        return await process_audio_url(request.audio_url, request.duration)
+        return await process_audio_url(request.audio_url)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
