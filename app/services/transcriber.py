@@ -31,7 +31,7 @@ def _load_or_create_robot_embed(robot_profile_path: str, wav_path: str) -> np.nd
     return embed
 
 # --------------------------------------------------------------------------- #
-async def transcribe_with_whisper(audio_path: str) -> str:
+def transcribe_with_whisper(audio_path: str) -> str:
     resp = openai.audio.transcriptions.create(
         file=open(audio_path, "rb"),
         model="whisper-1",

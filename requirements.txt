@@ -3,10 +3,11 @@ uvicorn[standard]
 python-multipart
 pydantic
 python-dotenv
-resemblyzer           # speaker‑embeddings
-librosa               # audio helpers
+resemblyzer
+librosa
 soundfile
 numpy
 scipy
 openai
 aiohttp
+pydantic-settings
