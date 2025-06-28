@@ -3,7 +3,7 @@ name: Deploy to Render (Develop Branch)
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   deploy:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Trigger Render Deploy
-        uses: actions/http-client@v1
+        uses: actions/http-client@v3
         with:
           url: https://api.render.com/deploy/srv-d1fkjvffte5s73fkricg
           method: POST
