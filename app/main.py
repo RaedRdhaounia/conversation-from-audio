@@ -10,9 +10,13 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from app.models.response import ResponseWrapper
 from app.routes.routes import router
+from app.routes.healthcare import healthcare_router 
+from app.routes.root import root_router
 
 app = FastAPI(title="Voice Transcriber Service")
 
+app.include_router(root_router)
+app.include_router(healthcare_router)
 app.include_router(router)
 
 @app.exception_handler(RequestValidationError)

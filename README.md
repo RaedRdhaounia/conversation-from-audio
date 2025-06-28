@@ -54,42 +54,84 @@ uvicorn app.main:app --reload
 ```
 ## 📡 API Endpoint
 
-### GET /api/conversation
+### POST /api/conversation
 
-Query Parameters:
-Name	    Type	Description
-audio_url	string	Public URL of the MP3 or WAV file
-duration	float	Total audio duration (in seconds)
+This endpoint processes an audio URL to transcribe the conversation and identify speakers.
 
-Example:
+Request Body:
+The request expects a JSON object with the following field:
+
+Name	    | Type	 | Description
+audio_url |	string | Public URL of the MP3 or WAV file
+
+Example Request:
 
 ```bash 
-GET http://localhost:8000/api/conversation?audio_url=https://example.com/audio.mp3&duration=32
+POST http://localhost:8000/api/conversation
+Content-Type: application/json
+
+{
+  "audio_url": "https://example.com/audio.mp3"
+}
 ```
+
 Response:
 ```json 
 {
-  "messages": [
-    {
-      "sender": "robot",
-      "duration": 4,
-      "text": "Bonjour, je suis ici pour vous aider..."
-    },
-    {
-      "sender": "user",
-      "duration": 4,
-      "text": "Merci, je voudrais réserver une activité."
-    }
-  ]
+  "status": 200,
+  "success": true,
+  "message": "Transcription completed successfully.",
+  "data": {
+    "messages": [
+      {
+        "sender": "robot",
+        "duration": 4,
+        "text": "Bonjour, je suis ici pour vous aider..."
+      },
+      {
+        "sender": "user",
+        "duration": 4,
+        "text": "Merci, je voudrais réserver une activité."
+      }
+    ]
+  }
 }
 ```
+
 ## 📁 Project Structure
-app/
-├── api/              # Routes
-├── core/             # Configuration and settings
-├── models/           # Pydantic models
-├── services/         # Transcription + speaker logic
-└── main.py           # App entrypoint
+conversation-from-audio/
+├── .env.example
+├── .gitignore
+├── confitest.py
+├── LICENSE
+├── pytest.ini
+├── README.md
+├── app/
+│   ├── api/
+│   ├── core/
+│   │   └── config.py
+│   ├── helper/
+│   │   ├── download_file.py
+│   │   ├── duration_call.py
+│   │   ├── labels_conversation.py
+│   │   └── split_transcriptions.py
+│   ├── models/
+│   │   ├── conversation.py
+│   │   └── response.py
+│   ├── routes/
+│   │   └── routes.py
+│   ├── services/
+│   │   ├── get_transcriptions.py
+│   │   ├── speaker.py
+│   │   └── transcriber.py
+│   └── main.py
+├── test/
+│   ├── transcriber_test.py
+│   └── .pytest_cache/
+└── utils/
+    ├── prompt_templates.py
+    └── main.py
+
 
 ## ✅ Next Improvements
 - 🎙️ Real speaker detection using Resemblyzer

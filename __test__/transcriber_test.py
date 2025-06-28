@@ -14,13 +14,13 @@ from app.core.config import settings
 @patch("app.services.transcriber.label_speakers_using_openai")
 @patch("os.remove")
 async def test_process_audio_url(
-    mock_remove,
-    mock_label_speakers,
-    mock_estimate_durations,
-    mock_split_to_sentences,
-    mock_get_audio_duration,
-    mock_transcribe,
-    mock_download_file
+    mock_remove: AsyncMock,
+    mock_label_speakers: AsyncMock,
+    mock_estimate_durations: AsyncMock,
+    mock_split_to_sentences: AsyncMock,
+    mock_get_audio_duration: AsyncMock,
+    mock_transcribe: AsyncMock,
+    mock_download_file: AsyncMock
 ):
     mock_download_file.return_value = "/tmp/fake_audio.mp3"
     mock_transcribe.return_value = "Hello. How are you?"
