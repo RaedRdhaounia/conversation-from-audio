@@ -11,3 +11,4 @@ scipy
 openai
 aiohttp
 pydantic-settings
+aiofiles

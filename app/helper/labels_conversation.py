@@ -1,16 +1,19 @@
 import openai
 import json
 from typing import List
+from app.utils.prompt_templates import generate_speaker_labeling_prompt
 
 def label_speakers_using_openai(sentences: List[str]) -> List[str]:
-    prompt = (
-        "You are given a list of sentences from a conversation. "
-        "Classify the speaker of each sentence as either 'robot' or 'user'.\n\n"
-        "Sentences:\n"
-    )
-    for i, s in enumerate(sentences, 1):
-        prompt += f"{i}. {s}\n"
-    prompt += "\nReturn a JSON array like: [\"robot\", \"user\", ...]"
+    """
+    Uses OpenAI GPT to classify each sentence as spoken by 'robot' or 'user'.
+
+    Args:
+        sentences (List[str]): List of sentences from the transcript.
+
+    Returns:
+        List[str]: Corresponding speaker labels ('robot' or 'user') for each sentence.
+    """
+    prompt = generate_speaker_labeling_prompt(sentences)
 
     try:
         response = openai.chat.completions.create(
