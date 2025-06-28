@@ -12,3 +12,7 @@ openai
 aiohttp
 pydantic-settings
 aiofiles
+
+pytest
+pytest-asyncio
+pytest-mock
