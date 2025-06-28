@@ -1,0 +1,22 @@
+name: Deploy to Render (Develop Branch)
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Render Deploy
+        uses: actions/http-client@v1
+        with:
+          url: https://api.render.com/deploy/srv-d1fkjvffte5s73fkricg
+          method: POST
+          headers: |
+            Accept: application/json
+            Authorization: Bearer ${{ secrets.RENDER_API_KEY }}
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
