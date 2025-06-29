@@ -1,22 +1,22 @@
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
-from fastapi.staticfiles import StaticFiles  # Import StaticFiles here
+from fastapi.staticfiles import StaticFiles
 
 from app.models.response import ResponseWrapper
-from app.routes.routes import router
+from app.routes.transcription import transcription_router
 from app.routes.healthcare import healthcare_router
 from app.routes.root import root_router
+from app.routes.summary import summary_router
 
 app = FastAPI(title="Voice Transcriber Service")
 
-# Mount static files ONCE here
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
-# Include your routers
 app.include_router(root_router)
 app.include_router(healthcare_router)
-app.include_router(router)
+app.include_router(transcription_router)
+app.include_router(summary_router)
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
