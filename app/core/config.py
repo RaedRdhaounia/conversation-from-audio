@@ -23,6 +23,10 @@ class Settings(BaseSettings):
     audio_url: Optional[HttpUrl] = None
     test_audio_url: Optional[HttpUrl] = Field(None, env="TEST_AUDIO_URL")
     robot_profile_path: str = "data/robot_embed.npy"
+    
+    resend_api_key: str = Field(..., env="RESEND_API_KEY")
+    email_from: str = Field(..., env="EMAIL_FROM")
+    admin_email: str = Field(..., env="ADMIN_EMAIL")
     model_config = SettingsConfigDict(
         env_file=".env",
         extra='forbid'
