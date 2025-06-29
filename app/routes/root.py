@@ -83,3 +83,7 @@ async def read_root(request: Request):
 @root_router.get("/terms")
 async def terms(request: Request):
     return templates.TemplateResponse("terms.html", {"request": request})
+
+@root_router.get("/privacy")
+async def privacy(request: Request):
+    return templates.TemplateResponse("privacy.html", {"request": request})

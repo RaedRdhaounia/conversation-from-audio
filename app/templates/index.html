@@ -133,37 +133,38 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-            padding-top: 60px;
-        }
+            /* Main content */
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #f0f2f5;
+                color: #333;
+                line-height: 1.6;
+                padding-top: 60px;
+            }
 
-        /* Navigation bar */
-        .navbar {
-            background: linear-gradient(135deg, #2c3e50 0%, #425466 100%);
-            padding: 1rem;
-            position: fixed;
-            top: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
+            /* Navigation bar */
+            .navbar {
+                background: linear-gradient(135deg, #2c3e50 0%, #425466 100%);
+                padding: 1rem;
+                position: fixed;
+                top: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
 
-        .nav-links {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 0 2rem;
-        }
+            .nav-links {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 2rem;
+            }
 
         .nav-links a {
             color: white;
@@ -402,12 +403,13 @@
 </head>
 <body>
     <div class="navbar">
-            <div class="nav-links">
-                <a href="/" class="active">Home</a>
-                <a href="/docs">API Docs</a>
-                <a href="/contact">Contact</a>
-                <a href="/terms">Terms of Use</a>
-            </div>
+        <div class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="/docs">API Docs</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms of Use</a>
+            <a href="/privacy">Privacy Policy</a>
+        </div>
     </div>
 
     <div class="main-content">
