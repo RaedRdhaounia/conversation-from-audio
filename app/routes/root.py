@@ -79,3 +79,7 @@ async def handle_contact(
 @root_router.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+@root_router.get("/terms")
+async def terms(request: Request):
+    return templates.TemplateResponse("terms.html", {"request": request})
