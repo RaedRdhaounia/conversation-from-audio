@@ -142,6 +142,75 @@ conversation-from-audio/
 
 - 🔐 API key auth or JWT
 
+## 🐍 Python SDK
+
+The Voice Transcriber Service provides an official Python SDK for easy integration with your Python applications.
+
+### Installation
+
+Install the SDK using pip:
+
+```bash
+pip install voice_transcriber_sdk
+```
+
+### Basic Usage
+
+```python
+from voice_transcriber_sdk import VoiceTranscriberClient
+
+# Initialize with your API key
+client = VoiceTranscriberClient(api_key="your_api_key_here")
+
+# Process an audio file
+result = client.process_audio("https://example.com/audio.mp3")
+print(f"Messages: {result.messages}")
+
+# Generate summary
+summary = client.generate_summary("Your conversation text here")
+print(f"Summary: {summary.summary}")
+```
+
+### Features
+
+- 🎧 Audio file processing
+- 🤖 Conversation summarization
+- 📊 Health status checking
+- 🔐 API key validation
+
+### Rate Limits
+
+- Audio processing: 100 requests/hour
+- Summary generation: 50 requests/hour
+- Health checks: Unlimited
+
+### Error Handling
+
+The SDK raises exceptions for:
+- Invalid API key
+- Rate limit exceeded
+- Invalid audio URL
+- Service unavailable
+
+### Documentation
+
+For full API documentation, visit:
+https://conversation-from-audio.onrender.com/docs
+
+### Example Project
+
+Check out the example usage in:
+[sdk/python/voice_transcriber_sdk/examples/example_usage.py](https://github.com/RaedRdhaounia/conversation-from-audio/tree/main/sdk/python/voice_transcriber_sdk/examples/example_usage.py)
+
+### Testing
+
+The SDK includes comprehensive test coverage. Run tests with:
+
+```bash
+cd sdk/python/voice_transcriber_sdk
+python -m pytest tests/
+```
+
 ## development preview
 
 [Development Preview](https://conversation-from-audio.onrender.com/)
