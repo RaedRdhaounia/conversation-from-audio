@@ -87,7 +87,7 @@ async def get_conversation(request: TranscriptionRequest):
 
 
 @transcription_router.patch(
-    "conversation",
+    "/conversation",
     summary="Deep Health Check (Transcriber Test)",
     response_description="Verifies audio processing pipeline works correctly.",
     response_model=ResponseWrapper
