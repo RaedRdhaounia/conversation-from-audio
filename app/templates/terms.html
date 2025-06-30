@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Terms of Use - Voice Transcriber Service</title>
+        <style>
+            /* Reset and base styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Navigation bar */
+            .navbar {
+                background: linear-gradient(135deg, #2c3e50 0%, #425466 100%);
+                padding: 1rem;
+                position: fixed;
+                top: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            .nav-links {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 2rem;
+            }
+
+            .nav-links a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: background-color 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                background-color: rgba(255,255,255,0.1);
+            }
+
+            /* Main content */
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #f0f2f5;
+                color: #333;
+                line-height: 1.6;
+                padding-top: 60px;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            h1 {
+                color: #2c3e50;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+
+            h2 {
+                color: #2c3e50;
+                font-size: 1.8rem;
+                margin: 2rem 0 1rem;
+            }
+
+            h3 {
+                color: #425466;
+                font-size: 1.4rem;
+                margin: 1.5rem 0;
+            }
+
+            p {
+                margin: 1rem 0;
+                line-height: 1.8;
+            }
+
+            .content-section {
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                margin-bottom: 2rem;
+            }
+
+            .important {
+                color: #dc2626;
+                font-weight: bold;
+            }
+
+            .creator-info {
+                margin-top: 3rem;
+                text-align: center;
+                padding: 2rem;
+                background: #f8fafc;
+                border-radius: 12px;
+            }
+
+            .creator-info h3 {
+                color: #2c3e50;
+                margin-bottom: 1rem;
+            }
+
+            .creator-info p {
+                color: #4b5563;
+            }
+
+            .project-links {
+                margin-top: 1.5rem;
+            }
+
+            .project-links ul {
+                list-style: none;
+                padding: 0;
+                margin: 1rem 0;
+            }
+
+            .project-links li {
+                margin: 0.5rem 0;
+            }
+
+            .project-links a {
+                color: #2c3e50;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .project-links a:hover {
+                color: #425466;
+                text-decoration: underline;
+            }
+
+            .contact-section {
+                background: #f0f9ff;
+                padding: 2rem;
+                border-radius: 12px;
+                margin: 2rem 0;
+            }
+
+            .contact-section h3 {
+                color: #2c3e50;
+                margin-bottom: 1rem;
+            }
+
+            .contact-section p {
+                color: #4b5563;
+            }
+
+            .footer {
+                text-align: center;
+                margin-top: 4rem;
+                padding: 2rem;
+                color: #6b7280;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/docs">API Docs</a>
+                <a href="/contact">Contact</a>
+                <a href="/terms">Terms of Use</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h1>Terms of Use</h1>
+
+            <div class="content-section">
+                <h2>1. Introduction</h2>
+                <p>Welcome to Voice Transcriber Service. These terms of use govern your access to and use of our service, including our Python SDK. Please read these terms carefully before using our service.</p>
+
+                <h2>2. Python SDK Usage Terms</h2>
+                <div class="content-section">
+                    <h3>SDK Requirements</h3>
+                    <p>To use the Python SDK, you must:</p>
+                    <ul>
+                        <li>Have a valid API key from the Voice Transcriber Service</li>
+                        <li>Use the latest version of the SDK</li>
+                        <li>Comply with all API rate limits and usage quotas</li>
+                        <li>Maintain the confidentiality of your API key</li>
+                    </ul>
+
+                    <h3>SDK Installation</h3>
+                    <p>Install the SDK using pip:</p>
+                    <pre><code>pip install voice_transcriber_sdk</code></pre>
+
+                    <h3>Basic Usage</h3>
+                    <p>Initialize the SDK with your API key:</p>
+                    <pre><code>from voice_transcriber_sdk import VoiceTranscriberClient
+client = VoiceTranscriberClient(api_key="your_api_key_here")</code></pre>
+
+                    <h3>Supported Features</h3>
+                    <ul>
+                        <li>Audio file processing</li>
+                        <li>Conversation summarization</li>
+                        <li>Health status checking</li>
+                        <li>API key validation</li>
+                    </ul>
+
+                    <h3>Rate Limits</h3>
+                    <p>The SDK is subject to the following rate limits:</p>
+                    <ul>
+                        <li>100 audio processing requests per hour</li>
+                        <li>50 summary generation requests per hour</li>
+                        <li>Unlimited health checks</li>
+                    </ul>
+
+                    <h3>Error Handling</h3>
+                    <p>The SDK may raise exceptions for:</p>
+                    <ul>
+                        <li>Invalid API key</li>
+                        <li>Rate limit exceeded</li>
+                        <li>Invalid audio URL</li>
+                        <li>Service unavailable</li>
+                    </ul>
+                </div>
+
+                <h2>2. Important Notice</h2>
+                <p class="important">IMPORTANT: All rights to this project belong to the creator team. No part of this project may be used, modified, or distributed without explicit permission from the administration.</p>
+
+                <h2>3. Usage Requirements</h2>
+                <div class="contact-section">
+                    <h3>Contact Requirements</h3>
+                    <p>Users must contact the administration for:</p>
+                    <ul>
+                        <li>Using the project</li>
+                        <li>Requesting permission to fork or modify</li>
+                        <li>Any other usage-related inquiries</li>
+                    </ul>
+                </div>
+
+                <h2>4. Intellectual Property</h2>
+                <p>All intellectual property rights in and to the Voice Transcriber Service, including but not limited to copyrights, trademarks, and trade secrets, are owned by the creator team.</p>
+
+                <h2>5. Prohibited Activities</h2>
+                <ul>
+                    <li>Using the service without prior approval from administration</li>
+                    <li>Forking or modifying the project without permission</li>
+                    <li>Using the service for unauthorized purposes</li>
+                </ul>
+
+                <h2>6. Contact Information</h2>
+                <div class="contact-section">
+                    <h3>Administration Contact</h3>
+                    <p>To contact the administration, please use our contact form at <a href="/contact">Contact Page</a> or email us at <a href="mailto:raedrdhaounia@gmail.com">raedrdhaounia@gmail.com</a>.</p>
+                </div>
+
+                <div class="creator-info">
+                    <h3>Project Information</h3>
+                    <p>Created and maintained by RaedRdhaounia and the Voice Transcriber Team</p>
+                    <p> 2025 Voice Transcriber Service. All rights reserved.</p>
+                    <div class="project-links">
+                        <p>Access the project at:</p>
+                        <ul>
+                            <li><a href="https://conversation-from-audio.onrender.com" target="_blank">Development Site</a></li>
+                            <li><a href="https://github.com/RaedRdhaounia/conversation-from-audio" target="_blank">GitHub Repository</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>For any questions regarding these terms of use, please contact us through our contact page.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
