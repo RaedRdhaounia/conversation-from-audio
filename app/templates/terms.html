@@ -177,7 +177,53 @@
 
             <div class="content-section">
                 <h2>1. Introduction</h2>
-                <p>Welcome to Voice Transcriber Service. These terms of use govern your access to and use of our service. Please read these terms carefully before using our service.</p>
+                <p>Welcome to Voice Transcriber Service. These terms of use govern your access to and use of our service, including our Python SDK. Please read these terms carefully before using our service.</p>
+
+                <h2>2. Python SDK Usage Terms</h2>
+                <div class="content-section">
+                    <h3>SDK Requirements</h3>
+                    <p>To use the Python SDK, you must:</p>
+                    <ul>
+                        <li>Have a valid API key from the Voice Transcriber Service</li>
+                        <li>Use the latest version of the SDK</li>
+                        <li>Comply with all API rate limits and usage quotas</li>
+                        <li>Maintain the confidentiality of your API key</li>
+                    </ul>
+
+                    <h3>SDK Installation</h3>
+                    <p>Install the SDK using pip:</p>
+                    <pre><code>pip install voice_transcriber_sdk</code></pre>
+
+                    <h3>Basic Usage</h3>
+                    <p>Initialize the SDK with your API key:</p>
+                    <pre><code>from voice_transcriber_sdk import VoiceTranscriberClient
+client = VoiceTranscriberClient(api_key="your_api_key_here")</code></pre>
+
+                    <h3>Supported Features</h3>
+                    <ul>
+                        <li>Audio file processing</li>
+                        <li>Conversation summarization</li>
+                        <li>Health status checking</li>
+                        <li>API key validation</li>
+                    </ul>
+
+                    <h3>Rate Limits</h3>
+                    <p>The SDK is subject to the following rate limits:</p>
+                    <ul>
+                        <li>100 audio processing requests per hour</li>
+                        <li>50 summary generation requests per hour</li>
+                        <li>Unlimited health checks</li>
+                    </ul>
+
+                    <h3>Error Handling</h3>
+                    <p>The SDK may raise exceptions for:</p>
+                    <ul>
+                        <li>Invalid API key</li>
+                        <li>Rate limit exceeded</li>
+                        <li>Invalid audio URL</li>
+                        <li>Service unavailable</li>
+                    </ul>
+                </div>
 
                 <h2>2. Important Notice</h2>
                 <p class="important">IMPORTANT: All rights to this project belong to the creator team. No part of this project may be used, modified, or distributed without explicit permission from the administration.</p>
