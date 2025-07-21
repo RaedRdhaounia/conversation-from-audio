@@ -12,6 +12,9 @@ from app.routes.summary import summary_router
 app = FastAPI(title="Voice Transcriber Service")
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
+@app.get("/favicon.ico")
+async def favicon():
+    return FileResponse("app/static/favicon.ico")
 
 app.include_router(root_router)
 app.include_router(healthcare_router)
