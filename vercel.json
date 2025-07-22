@@ -4,12 +4,6 @@
       "runtime": "python3.9"
     }
   },
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
-  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -18,12 +12,6 @@
     {
       "source": "/(.*)",
       "destination": "/api/index"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.py"
     }
   ]
 }
