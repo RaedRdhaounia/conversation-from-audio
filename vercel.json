@@ -13,10 +13,5 @@
       "source": "/(.*)",
       "destination": "/api/index"
     }
-  ],
-  "build": {
-    "env": {
-      "PYTHONPATH": "$PYTHONPATH:."
-    }
-  }
+  ]
 }
