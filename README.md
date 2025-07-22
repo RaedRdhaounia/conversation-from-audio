@@ -108,6 +108,7 @@ conversation-from-audio/
 ├── README.md
 ├── app/
 │   ├── api/
+│   │ └── index.py
 │   ├── core/
 │   │   └── config.py
 │   ├── helper/
@@ -116,21 +117,42 @@ conversation-from-audio/
 │   │   ├── labels_conversation.py
 │   │   └── split_transcriptions.py
 │   ├── models/
+│   │   ├── contact.py
+│   │   ├── conversation_summary.py
 │   │   ├── conversation.py
+│   │   ├── conversation.py
+│   │   ├── index.py
 │   │   └── response.py
 │   ├── routes/
-│   │   └── routes.py
+│   │   ├── healthcare.py
+│   │   ├── routes.py
+│   │   ├── summary.py
+│   │   └── transcription.py
 │   ├── services/
+│   │   ├── conversation_summary_service.py
 │   │   ├── get_transcriptions.py
 │   │   ├── speaker.py
 │   │   └── transcriber.py
+│   ├── static/
+│   │   ├── previews/
+│   │   │     ├── conversation_process.webp
+│   │   │     ├── conversation.png
+│   │   │     ├── documentation.png
+│   │   │     ├── summary.webp
+│   │   │     └── summary.png
+│   │   └── fav.ico
+│   ├── template/
+│   │   ├── contact.html
+│   │   ├── index.html
+│   │   ├── privacy.html
+│   │   └── terms.html
 │   └── main.py
 ├── test/
 │   ├── transcriber_test.py
 │   └── .pytest_cache/
 └── utils/
     ├── prompt_templates.py
-    └── main.py
+    └── email.py
 
 
 ## ✅ Next Improvements
